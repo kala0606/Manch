@@ -49,21 +49,21 @@ function drawCube( side,  size) {
         if(x==-side/2 || x == side/2 || y==-side/2 || y==side/2){
           let fc, floNo;
           push();
-          let nF = noise(x/10,y/10)
+          let nF = noise(x/10,y/10,size)
             
             if(noise(x,y)>0.7){
-                translate(x,y,100*nF);
+                translate(x,y,size/30*50*nF);
                 fc = 200;
-                floNo = 200;
+                floNo = 100;
             }
             else {
-                translate(x,y,15*nF);
+                translate(x,y,size/30*15*nF);
                 fc = 200;
                 floNo = 30
             }
             fill(fc);
             
-            box(size,size, floNo*nF);
+            box(size,size, size/30*floNo*nF);
             
           pop();
            }
