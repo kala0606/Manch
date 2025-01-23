@@ -4,7 +4,7 @@ let iSet;
 let iPlus;
 
 function setup() {
-  createCanvas(400, 400, WEBGL);
+  createCanvas(500, 500, WEBGL);
   iSet = int(random(5,15));
   iPlus= int(random(5,15));
   myModel = buildGeometry(() => {
@@ -24,7 +24,7 @@ function setup() {
       drawCube(i*4, i); 
     }
     fill(200);
-    box(200,200,3.0);
+    box(200,200,1.0);
   });
 
   saveBtn = createButton('Save .obj');
@@ -34,7 +34,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255);
   noStroke();
   lights();
   
@@ -51,15 +51,15 @@ function drawCube( side,  size) {
           push();
           let nF = noise(x/10,y/10,size)
             
-            if(noise(x,y)>0.7){
-                translate(x,y,size/30*50*nF);
-                fc = 200;
-                floNo = 100;
+            if(noise(x,y)>0.5){
+                translate(x,y,size/30*15*nF);
+                fc = 245;
+                floNo = 30;
             }
             else {
-                translate(x,y,size/30*15*nF);
-                fc = 200;
-                floNo = 30
+                translate(x,y,size/30*5*nF);
+                fc = 20;
+                floNo = 10;
             }
             fill(fc);
             
